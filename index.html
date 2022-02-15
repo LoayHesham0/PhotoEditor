@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Introduction to Media Project</title>
+    <script src="app.js"> </script>
+    <link rel="stylesheet" href="style.css">
+
+    <name class="center">
+        <p>Loay Hesham Elagroody</p>
+     </name>
+     <id class="center">
+        <p>52-23590</p>
+     </id>
+     <tutorial class="center">
+         <p>T-09</p>
+     </tutorial>
+    
+
+</head>
+
+
+<body>
+    <div>
+        <p><b>Upload a grayscale image </b></p>
+        <input id="uploadImage" name="photo" type="file" accept="image/jpg,image/png" onchange="displayOriginalImage(this)" >
+    </div>
+
+    <div class="row" id="originalImage" style="display: none;">
+        <div class="column">
+            <p> The grayscale image you want to apply transformation on :</p>
+            <img src="" id="inputImage">
+        </div>
+        <div class="column" id="result" style="display: none;">
+            <p>Transformed Image :</p>
+            <canvas id="resultImage"></canvas>
+        </div>
+
+    </div><br>
+
+    <form id="transformation" style="display: none;">
+        <b> Select the required image transformation </b>
+        <select id="myList" onchange="showTransformForm()">
+            <option disabled selected> ---Choose transformation--- </option>
+            <option> Increase Brightness </option>
+            <option> Decrease Brightness </option>
+            <option> Increase Contrast </option>
+            <option> Decrease Contrast </option>
+            <option> Inverse </option>
+        </select>
+        <p> Your selected transformation is:
+            <input type="text" id="transformType" size="20">
+    </form>
+    
+    <div id="increaseBrightnessInputs" style="display: none;">
+        <form id="increaseBrightnessForm" class="form" oninput="result1.value=parseInt(ib.value)">
+            <label>Increase Brightness Value: </label>
+            <input type="range" id="ib" placeholder="0" min="0" max="255">=<output name="result1" for="ib"></output><br><br>
+            <input type="submit" value="Apply">
+        </form>
+        <p>Click on the Apply button to submit the value.</p>
+    </div>
+
+    <div id="decreaseBrightnessInputs" style="display: none;">
+        <form id="decreaseBrightnessForm" class="form" oninput="result2.value=parseInt(db.value)">
+            <label>Decrease Brightness Value: </label>
+            <input type="range" id="db" placeholder="0" min="0" max="255">=<output name="result2" for="db"></output><br><br>
+            <input type="submit" value="Apply">
+        </form>
+        <p>Click on the Apply button to submit the value.</p>
+    </div>
+
+    <div id="increaseContrastInputs" style="display: none;">
+        <form id="originalBrightestDarkForm" class="form" oninput="result3.value=parseInt(OBD.value)">
+            <label>Original Brightest Dark: </label>
+            <input type="range" id="OBD" placeholder="0" min="0" max="255">=<output name="result3" for="OBD"></output><br><br>
+        </form>
+        <form id="originalDarkestBrightForm" class="form" oninput="result4.value=parseInt(ODB.value)">
+            <label>Original Darkest Bright: </label>
+            <input type="range" id="ODB" placeholder="0" min="0" max="255">=<output name="result4" for="ODB"></output><br><br>
+        </form>
+        <form id="transformedBrightestDarkForm" class="form" oninput="result5.value=parseInt(TBD.value)">
+            <label>Transformed Brightest Dark: </label>
+            <input type="range" id="TBD" placeholder="0" min="0" max="255">=<output name="result5" for="TBD"></output><br><br>
+        </form>
+        <form id="transformedDarkestBrightForm" class="form" oninput="result6.value=parseInt(TDB.value)">
+            <label>Transformed Darkest Bright: </label>
+            <input type="range" id="TDB" placeholder="0" min="0" max="255">=<output name="result6" for="TDB"></output><br><br>
+            <input type="submit" value="Apply">
+        </form>
+        <p>Click on the Apply button to submit the value.</p>
+    </div>
+
+    
+    <div id="decreaseContrastInputs" style="display: none;">
+        <form id="originalBrightestDarkFormat" class="form" oninput="result7.value=parseInt(OBDFORMAT.value)">
+            <label>Original Brightest Dark: </label>
+            <input type="range" id="OBDFORMAT" placeholder="0" min="0" max="255">=<output name="result7" for="OBDFORMAT"></output><br><br>
+        </form>
+        <form id="originalDarkestBrightFormat" class="form" oninput="result8.value=parseInt(ODBFORMAT.value)">
+            <label>Original Darkest Bright: </label>
+            <input type="range" id="ODBFORMAT" placeholder="0" min="0" max="255">=<output name="result8" for="ODBFORMAT"></output><br><br>
+        </form>
+        <form id="transformedBrightestDarkFormat" class="form" oninput="result9.value=parseInt(TBDFORMAT.value)">
+            <label>Transformed Brightest Dark: </label>
+            <input type="range" id="TBDFORMAT" placeholder="0" min="0" max="255">=<output name="result9" for="TBDFORMAT"></output><br><br>
+        </form>
+        <form id="transformedDarkestBrightFormat" class="form" oninput="result10.value=parseInt(TDBFORMAT.value)">
+            <label>Transformed Darkest Bright: </label>
+            <input type="range" id="TDBFORMAT" placeholder="0" min="0" max="255">=<output name="result10" for="TDBFORMAT"></output><br><br>
+            <input type="submit" value="Apply">
+        </form>
+        <p>Click on the Apply button to submit the value.</p>
+    </div>
+
+    <div id="inverseInputs" style="display: none;">
+        <form id="inverseForm" class="form">
+            <input type="submit" value="Apply">
+        </form>
+
+        <p>Click on the Apply button to submit the value.</p>
+    </div>
+
+</body>
+
+</html>
